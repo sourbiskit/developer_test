@@ -1,0 +1,12 @@
+{% if current_sur.question.all %}
+    {% for q in current_sur.question.all %}
+    <h3>{{q.text|capfirst}}</h3>
+    <ul>
+        {% for a in q.alternative.all %}
+            <li>{{a.text|capfirst}} (<a href="{% url 'survey:answers' a.id %}">Respostas</a>)</li>
+        {% endfor %}
+    </ul>
+    {% endfor %}
+{% else %}
+    <p>Nenhuma pergunta foi criada ainda.</p>
+{% endif %}

@@ -1,0 +1,9 @@
+{% if surveys %}
+    <ul>
+    {% for s in surveys %}
+        <li><a href="{% url 'survey:show_survey' s.id %}">{{ s.title|capfirst }}</a></li>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>Nenhuma pesquisa foi criada ainda.</p>
+{% endif %}

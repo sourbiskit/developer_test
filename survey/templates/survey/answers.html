@@ -1,0 +1,9 @@
+{% if current_a.user.all %}
+    <h1>{{current_a.text}}</h1>
+
+    {% for user_answer in current_a.user.all %}
+        {{user_answer.name|capfirst}} - {{user_answer.answer_date}}
+    {% endfor %}
+{% else %}
+    <p>Nenhuma resposta foi enviada ainda.</p>
+{% endif %}
