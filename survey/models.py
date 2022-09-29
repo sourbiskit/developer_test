@@ -34,4 +34,4 @@ class SurveyUserAnswer(models.Model):
     answer_date = models.DateTimeField()
 
     def __str__(self):
-        return self.name
+        return f"{self.name} - {self.alternative}"
