@@ -1,28 +1,31 @@
 from django.db import models
 
 
-class Survey(models.Model):
-    title = models.CharField(max_length=50, null=True)
-    pub_date = models.DateTimeField()
+class SurveyQuestionAlternative(models.Model):
+    text = models.CharField(max_length=200)
 
     def __str__(self):
-        return self.title
+        return self.text
 
 
 class SurveyQuestion(models.Model):
-    survey = models.ForeignKey(Survey, related_name='question', on_delete=models.CASCADE)
+    alternatives = models.ManyToManyField(SurveyQuestionAlternative, related_name='alternatives')
     text = models.CharField(max_length=200, null=True)
 
     def __str__(self):
         return self.text
 
 
-class SurveyQuestionAlternative(models.Model):
-    question = models.ForeignKey(SurveyQuestion, related_name='alternative', on_delete=models.CASCADE)
-    text = models.CharField(max_length=200)
+class Survey(models.Model):
+    questions = models.ManyToManyField(SurveyQuestion, related_name='questions')
+    title = models.CharField(max_length=50, null=True)
+    pub_date = models.DateTimeField()
+
+    class Meta:
+        ordering = ['pub_date']
 
     def __str__(self):
-        return self.text
+        return self.title
 
 
 class SurveyUserAnswer(models.Model):
@@ -32,6 +35,9 @@ class SurveyUserAnswer(models.Model):
 
     name = models.CharField(max_length=50)
     answer_date = models.DateTimeField()
+
+    class Meta:
+        ordering = ['answer_date']
 
     def __str__(self):
         return f"{self.name} - {self.alternative}"
