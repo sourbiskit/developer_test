@@ -1,0 +1,104 @@
+{
+  "surveys": [
+    {
+      "id": 1,
+      "title": "Teste 3",
+      "pub_date": "2022-09-30T10:09:05.306100-03:00",
+      "questions": [
+        1
+      ]
+    },
+    {
+      "id": 2,
+      "title": "Teste final?",
+      "pub_date": "2022-09-30T10:46:14.221236-03:00",
+      "questions": [
+        2,
+        3,
+        4
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "id": 1,
+      "text": "Você é um robô?",
+      "alternatives": []
+    },
+    {
+      "id": 2,
+      "text": "Quantos anos você tem?",
+      "alternatives": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "id": 3,
+      "text": "Como você está?",
+      "alternatives": [
+        5,
+        6,
+        7
+      ]
+    },
+    {
+      "id": 4,
+      "text": "Qual a sua cor favorita?",
+      "alternatives": [
+        8,
+        9,
+        10,
+        11
+      ]
+    }
+  ],
+  "alternatives": [
+    {
+      "id": 1,
+      "text": "15-21"
+    },
+    {
+      "id": 2,
+      "text": "22-35"
+    },
+    {
+      "id": 3,
+      "text": "36-48"
+    },
+    {
+      "id": 4,
+      "text": "49+"
+    },
+    {
+      "id": 5,
+      "text": "Bem"
+    },
+    {
+      "id": 6,
+      "text": "Mal"
+    },
+    {
+      "id": 7,
+      "text": "Ok"
+    },
+    {
+      "id": 8,
+      "text": "azul"
+    },
+    {
+      "id": 9,
+      "text": "rosa"
+    },
+    {
+      "id": 10,
+      "text": "preto"
+    },
+    {
+      "id": 11,
+      "text": "amarelo"
+    }
+  ]
+}
